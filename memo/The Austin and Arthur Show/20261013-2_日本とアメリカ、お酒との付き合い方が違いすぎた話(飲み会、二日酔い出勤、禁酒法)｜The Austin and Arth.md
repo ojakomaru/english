@@ -3,7 +3,7 @@ id: "20261013-2"
 title: "日本とアメリカ、お酒との付き合い方が違いすぎた話(飲み会、二日酔い出勤、禁酒法)｜The Austin and Arthur Show…"
 channel: "The Austin and Arthur Show"
 created: 2026-10-13T08:26+09:00
-modified: 2026-10-16T07:48+09:00
+modified: 2026-10-19T08:25+09:00
 source: apple-notes
 apple_note_id: "x-coredata://43183D89-3F99-4A96-B90D-AC2196CBDDF1/ICNote/p1289"
 ---
@@ -477,151 +477,129 @@ It's like, / "Well, yeah, I'm sorry. / This is putting a responsibility on you, 
 
 So, like, I kind of have to go do this, right?" だから、まあ、参加しないわけにはいかないんだよね？」ってね。
 
-Yeah. I mean, I I see that, but I feel like I feel like still nomis are kind of
+Yeah. I mean, I I see that, but I feel like I feel like still nomis are kind of / like an an artifact of the of the shoa period because
 
-like an an artifact of the of the shoa period because Okay, so my first
+うん。言いたいことは分かるんだけど、やっぱり飲み会って、昭和の時代の名残みたいなものだと思うんだよね。
 
-experience with nomi was when I was 15 years old. I did not go to one, okay?
+Okay, so my first experience with nomi was when I was 15 years old. / I did not go to one, okay?
 
-But I did a homeay and the father was a big
+それで、僕が初めて飲み会というものを経験したのは、15歳のときだった。いや、飲み会に参加したわけじゃないよ。
 
-business guy. There it is.
+But I did a homeay and the father was a big business guy. / There it is.
 
-And I have to tell you now, so I was I was really innocent back then cuz I told
+ホームステイをしたんだけど、そこのお父さんが大物のビジネスマンだったんだ。そういうことなんだよ。
 
-you I didn't drink in high school either.
+And I have to tell you now, so I was I was really innocent back then / cuz I told you I didn't drink in high school either.
 
-Um, looking back on my one month staying in
+今だから言えるけど、当時の僕は本当に世間知らずだった。前にも言ったけど、高校時代はお酒も飲まなかったからね。
 
-this family. I saw him out of one month I saw him for maybe 10
+Um, looking back on my one month staying in this family. / I saw him out of one month I saw him for maybe 10 days / [laughter] and probably six of those days he was drunk [laughter]
 
-days [laughter] and probably six of those days he was
+ええと、その家族のところで1か月間過ごしたことを振り返ると、1か月のうち、お父さんを見かけたのはたぶん10日くらいだった。［笑い］しかも、そのうち6日くらいは酔っ払っていたと思う。［笑い］
 
-drunk [laughter] because I remember what would happen is
+because I remember what would happen is / we would have this thing where like okay it's around 8:00 okay Arthur it's time for you to go to the ofudo and it's time for you to go to bed
 
-we would have this thing where like okay it's around 8:00 okay Arthur it's time
+というのも、こんなことがあったのを覚えているんだ。夜8時くらいになると、「よし、アーサー、お風呂に入る時間だよ。それから寝る時間だよ」って言われるんだ。
 
-for you to go to the ofudo and it's time for you to go to bed and I was like okay
+and I was like okay sure all right / and one day I was late and I was in the middle of like I I just finished with Yofuru and I came out and I was changing my clothes
 
-sure all right and one day I was late and I was in the middle of like I I just
+僕は「分かった、いいよ」って感じだった。それで、ある日、僕がちょっと遅くなって、ちょうど夜風呂を済ませて出てきて、服を着替えているところだったんだ。
 
-finished with Yofuru and I came out and I was changing my clothes and the dad
+and the dad came home early and he was so drunk / and he just kind of like like cuz cuz when when you come home and he's he's drunk he gets his way cuz he's the man the master of the house, you know.
 
-came home early and he was so drunk and he just kind of like like cuz cuz when
+そしたら、お父さんがいつもより早く帰ってきていて、ものすごく酔っ払っていた。酔っ払って帰ってくると、彼の思いどおりになるんだよ。だって一家の男、つまり家の主だからね。
 
-when you come home and he's he's drunk he gets his way cuz he's the man the
+And I just remember I hear like boom boom boom boom boom / and then the door opens up and I'm like almost naked, right? I'm putting my clothes on.
 
-master of the house, you know. And I just remember I hear like boom boom boom
+それで、ドンドンドンドンドンって音がしたのを覚えている。それからドアが開いたんだけど、そのとき僕はほとんど裸だったんだよ。ちょうど服を着ているところだった。
 
-boom boom and then the door opens up and I'm like almost naked, right? I'm
+He just and he just closes the door again like / to wait for me to get out which was nice / but like I saw oh they were trying to shield me from this cuz this happens like almost every day
 
-putting my clothes on. He just and he just closes the door again like
+そしたら彼は、すぐにまたドアを閉めたんだ。僕が着替えて出てくるのを待つためにね。それはありがたかった。でも、そのとき僕は「ああ、こういうことから僕を守ろうとしてくれていたんだな」って思った。だって、こんなことがほぼ毎日起きていたんだから。
 
-to wait for me to get out which was nice but like I saw oh they were trying to
+you know and then like um on the weekends like on the on the holidays / we would go out and we would hang out have a barbecue in the in the garden. / He was drunk then too. Yeah.
 
-shield me from this cuz this happens like almost every day
+それで、週末とか祝日になると、みんなで外に出て、庭でバーベキューをしたりして過ごしたんだ。彼はそのときも酔っ払っていたよ。そう。
 
-you know and then like um on the weekends like on
+And like that was just kind of like the state back then of like / Yeah. you know, the the man of the house, he goes to work, he drinks with his friends, comes home drunk. Yeah.
 
-the on the holidays we would go out and we would hang out have a barbecue in the
+当時は、まあ、そういうのが普通だったんだよね。そう、つまり一家の大黒柱が仕事に行って、友達と酒を飲んで、酔っ払って帰ってくる。そう。
 
-in the garden. He was drunk then too. Yeah.
+His wife needs to clean up the mess, and he just goes to sleep. / Yeah.
 
-And like that was just kind of like the state back then of like
+奥さんがその後始末をしなきゃいけなくて、本人はそのまま寝る。そう。
 
-Yeah. you know, the the man of the house, he goes to work, he drinks with
+And like I I feel like maybe Nomi Kai have kind of like changed their position now, but like / it was really the time for you to let go and kind of people would say, "Oh, you're drunk, so you can't be held responsible."
 
-his friends, comes home drunk. Yeah.
+それで、今では飲み会の位置づけも少し変わってきたんじゃないかと思うんだけど、昔は本当に、普段の自分を解放するための場だったんだよね。周りも「酔っ払ってるんだから、責任を問えないよ」みたいに言ったりして。
 
-His wife needs to clean up the mess, and he just goes to sleep.
+Yeah. And you know, it's funny because actually now that you think about now I think about that, / have you noticed how in the subway or in the train stations, they have so many ads that say just cuz you're drunk doesn't mean it's acceptable.
 
-Yeah. And like I I feel like maybe Nomi Kai
+そう。それで面白いのが、今こうして考えてみると、地下鉄や駅で、「酔っているからといって許されるわけではありません」みたいな広告をたくさん見かけない？
 
-have kind of like changed their position now, but like
+Even if you're drunk, it's still a violent crime / because people would think, "Oh, I was drunk, I can't be held responsible, you know, cuz it comes back for that."
 
-it was really the time for you to let go and kind of people would say, "Oh,
+酔っ払っていても、暴力を振るえば犯罪なんだ。だって、「酔っていたんだから、責任は問われないはずだ」って考える人がいるからね。そういう考え方への反動なんだよ。
 
-you're drunk, so you can't be held responsible."
+But unless you have postpartum depression. / Okay, let's not talk about that. Let's not let's not talk about that. Let's not talk about that.
 
-Yeah. And you know, it's funny because actually now that you think about now I
+ただし、産後うつがある場合は別だけど。いや、この話はやめよう。やめておこう。これは話さないでおこう。
 
-think about that, have you noticed how in the subway or in
+Um I'm sorry. I don't anyone creeped out.
 
-the train stations, they have so many ads that say just cuz you're drunk
+ええと、ごめん。誰かを気味悪がらせるつもりはないんだ。
 
-doesn't mean it's acceptable. Even if you're drunk, it's still a
+You guys you guys need to watch what was happening in the news in America in midepptember. / I don't want to talk about anymore on this show.
 
-violent crime because people would think, "Oh, I was drunk, I can't be held
+みんな、9月半ばにアメリカのニュースで何が起きていたか、ちゃんと見ておいたほうがいいよ。この番組では、これ以上その話をしたくない。
 
-responsible, you know, cuz it comes back for that." But
+Um but yeah, so like like you have that but then in in America it's like / oh you still are responsible Yeah. / for being a jerk or whatever if you're drunk, you know.
 
-unless you have postpartum depression. Okay, let's not talk about that. Let's
+ええと、まあ、日本にはそういう考え方がある一方で、アメリカでは、「いや、酔っ払っていても責任はあるでしょ」ってなるんだよね。そう。酔っていて嫌なやつになったり、何か問題を起こしたりしたら、その責任は取らなきゃいけないってこと。
 
-not let's not talk about that. Let's not talk about that. Um
+Yeah. I don't know. But yeah, it's just like / so like I don't know. I just I feel like, you know, in in the States, alcohol is still kind of like kind of a hush hush thing you do.
 
-I'm sorry. I don't anyone creeped out.
+うん、どうなんだろうね。でも、なんというか、アメリカではお酒を飲むことって、今でもちょっと隠れてこっそりやるようなことだと感じるんだよね。
 
-You guys you guys need to watch what was happening in the news in America
+Cuz like in Japan, people say, "Let's go drink alcohol together." / I remember hearing that thinking like, "Wow, you're really blunt."
 
-in midepptember. I don't want to talk about anymore on
+だって、日本では「一緒にお酒を飲みに行こう」って言うじゃない。初めてそれを聞いたとき、「うわ、ずいぶんストレートに言うんだな」って思ったのを覚えているよ。
 
-this show. Um but yeah, so like like you have that but then in in America it's
+Cuz in the States, you say, "Oh, let's go let's go let's go hang out or let's go get some drinks." / Yeah.
 
-like oh you still are responsible Yeah.
+アメリカでは、「遊びに行こうよ」とか「ちょっと飲みに行こうよ」って言うんだ。そう。
 
-for being a jerk or whatever if you're drunk, you know.
+They never say alcohol, but it's always alcohol, you know? / Yeah.
 
-Yeah. I don't know. But yeah, it's just like
+「アルコールを飲もう」なんて言い方はしないんだけど、結局、いつもお酒を飲むことなんだよね。分かる？ そう。
 
-so like I don't know. I just I feel like, you
+So, I'm like, where's that come from, you know? / Yeah.
 
-know, in in the States, alcohol is still kind of like kind of a
+だから、「この違いってどこから来るんだろう？」って思うんだよね。そう。
 
-hush hush thing you do. Cuz like in Japan, people say, "Let's go drink
+It's, you know, it's kind of funny because um / the idea of drinking with my co-workers is never something I've ever like really considered until I moved here.
 
-alcohol together." I remember hearing that thinking like, "Wow, you're really
+なんというか、ちょっと面白いんだけど、ここ日本に引っ越してくるまでは、職場の同僚とお酒を飲むなんて、真剣に考えたこともなかったんだよね。
 
-blunt." Cuz in the States, you say, "Oh, let's
+Yeah. Right. / You know, it's like my workday is over at 5. Why would I spend more time with them? / Yeah.
 
-go let's go let's go hang out or let's go get some
+そうだよね。だって、仕事は5時に終わるわけじゃない。なのに、どうしてわざわざその人たちと余分に時間を過ごさなきゃいけないんだ、って感じなんだよ。そう。
 
-drinks." Yeah.
+It's like, you know, it's not like I would go, you know, I never drink after work back in the US, but like I would always meet up my friends. / Yeah.
 
-They never say alcohol, but it's always alcohol, you know?
+アメリカにいた頃、仕事の後に飲みに行くことはなかったんだけど、友達とはよく会っていたんだよね。そう。
 
-Yeah. So, I'm like, where's that come from,
+You know, it's like, "Oh, dude. Okay, you get off at 5. All right, cool. I'm off at 6. Let's go meet at like the Applebee's or, you know, whatever the local bar is nearby."
 
-you know? Yeah. It's,
+例えば、「おい、君は5時に仕事が終わるんだね。いいね。俺は6時に終わるから、近くのApplebee'sとか、そこら辺にある適当なバーで待ち合わせようぜ」って感じ。
 
-you know, it's kind of funny because um
+And like, then we'll meet. / But like, even then, a lot of the time, and part of this is to do with me being younger than living in the US, but like really not not that much, I would go to someone's house and drink. / Yeah.
 
-the idea of drinking with my co-workers is never something I've ever like really
+それで、実際に会って飲むわけ。でも、そういう場合でも、というか、これはアメリカに住んでいた頃の自分が今より若かったことも多少関係しているんだけど、それほど大きな違いではなくて、誰かの家に行ってお酒を飲むこともよくあったんだ。そう。
 
-considered until I moved here. Yeah. Right.
+Um, drinking at someone's house is like super super common. / Yeah, I would say that's more common. / Yeah, for sure. Instead of going out.
 
-You know, it's like my workday is over at 5. Why
-
-would I spend more time with them? Yeah. It's like, you know, it's not like
-
-I would go, you know, I never drink after work back in the US, but like I
-
-would always meet up my friends. Yeah. you know, it's like, "Oh, dude. Okay,
-
-you get off at 5. All right, cool. I'm off at 6. Let's go meet at like the
-
-Applebee's or, you know, whatever the local bar is nearby."
-
-And like, then we'll meet. But like, even then,
-
-a lot of the time, and part of this is to do with me being
-
-younger than living in the US, but like really not not that much, I would go to
-
-someone's house and drink. Yeah.
-
-Um, drinking at someone's house is like super super common.
-
-Yeah, I would say that's more common. Yeah, for sure. Instead of going out.
+ええと、誰かの家でお酒を飲むのは、本当に、本当によくあることなんだよ。そうだね。外に飲みに行くより、家で飲むほうが一般的だと思う。うん、間違いなくね。
 
 Yeah. But I feel like in in the States people are like just more domestic like
 
