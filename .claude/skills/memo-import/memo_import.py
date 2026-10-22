@@ -1,12 +1,12 @@
-"""Apple メモの学習メモを memo/ に Markdown で取り込む（前回より後に更新されたものだけ）。
+"""Apple メモの学習メモを 10_memo/ に Markdown で取り込む（前回より後に更新されたものだけ）。
 
 usage:
-  python3 -I memo_import.py [--folder "Video learning"] [--memo-dir memo] [--since ISO8601] [--all] [--dry-run]
+  python3 -I memo_import.py [--folder "Video learning"] [--memo-dir 10_memo] [--since ISO8601] [--all] [--dry-run]
 
 - 取り込み対象は指定フォルダとその配下のサブフォルダ（iCloud アカウント）。
-- memo/ の下にメモアプリと同じ名前のサブフォルダを作って置く（指定フォルダ直下のメモは memo/ 直下）。
+- 10_memo/ の下にメモアプリと同じ名前のサブフォルダを作って置く（指定フォルダ直下のメモは 10_memo/ 直下）。
 - メモアプリでメモを別のフォルダに移したら、ファイルも同じフォルダに移す（ファイル名はそのまま）。
-- 「前回」は memo/ の各ファイルの modified の最大値。--since で上書き、--all で全件。
+- 「前回」は 10_memo/ の各ファイルの modified の最大値。--since で上書き、--all で全件。
 - 同じメモ（apple_note_id が同じ）のファイルがあれば、ファイル名（ID）はそのままで中身を更新する。
 - 新しいメモは作成日を ID にする。同じ日のファイルがあれば -N を付けて既存の最大値＋1 にする。
 - メモアプリ側で消したメモのファイルは消さない。
@@ -176,7 +176,7 @@ def safe_name(title):
 
 
 def folder_dir(memo_dir, folder, root):
-    """メモアプリのフォルダに対応する memo/ 配下のディレクトリ。"""
+    """メモアプリのフォルダに対応する 10_memo/ 配下のディレクトリ。"""
     return memo_dir if folder.strip() == root else memo_dir / safe_name(folder)
 
 
@@ -222,7 +222,7 @@ def render(n, note_id):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--folder", default="Video learning")
-    ap.add_argument("--memo-dir", default="memo")
+    ap.add_argument("--memo-dir", default="10_memo")
     ap.add_argument("--since", help="この日時以降に更新されたメモを取り込む（ISO8601）")
     ap.add_argument("--all", action="store_true", help="日時で絞らず全件を対象にする")
     ap.add_argument("--dry-run", action="store_true", help="書き込まずに対象だけ表示する")
