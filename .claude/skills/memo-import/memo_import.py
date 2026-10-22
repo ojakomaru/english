@@ -4,6 +4,8 @@ usage:
   python3 -I memo_import.py [--folder "Video learning"] [--memo-dir memo] [--since ISO8601] [--all] [--dry-run]
 
 - 取り込み対象は指定フォルダとその配下のサブフォルダ（iCloud アカウント）。
+- memo/ の下にメモアプリと同じ名前のサブフォルダを作って置く（指定フォルダ直下のメモは memo/ 直下）。
+- メモアプリでメモを別のフォルダに移したら、ファイルも同じフォルダに移す（ファイル名はそのまま）。
 - 「前回」は memo/ の各ファイルの modified の最大値。--since で上書き、--all で全件。
 - 同じメモ（apple_note_id が同じ）のファイルがあれば、ファイル名（ID）はそのままで中身を更新する。
 - 新しいメモは作成日を ID にする。同じ日のファイルがあれば -N を付けて既存の最大値＋1 にする。
@@ -173,6 +175,11 @@ def safe_name(title):
     return t[:60].rstrip() or "無題"
 
 
+def folder_dir(memo_dir, folder, root):
+    """メモアプリのフォルダに対応する memo/ 配下のディレクトリ。"""
+    return memo_dir if folder.strip() == root else memo_dir / safe_name(folder)
+
+
 def to_jst(iso):
     return datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(JST)
 
@@ -227,7 +234,7 @@ def main():
     by_note = {}  # apple_note_id -> 既存ファイル
     day_max = defaultdict(int)  # YYYYMMDD -> 使用済みの最大番号（番号なしは 1）
     latest = None
-    for p in memo_dir.glob("*.md"):
+    for p in memo_dir.rglob("*.md"):
         meta = read_front(p)
         if meta.get("apple_note_id"):
             by_note[meta["apple_note_id"]] = p
@@ -253,32 +260,44 @@ def main():
         sys.exit("メモアプリから読み出せませんでした: " + res.stderr.strip())
     notes = json.loads(res.stdout or "[]")
 
-    added, updated, unchanged = [], [], []
+    added, updated, moved, unchanged = [], [], [], []
     for n in sorted(notes, key=lambda x: x["created"]):
         existing = by_note.get(n["id"])
+        dest_dir = folder_dir(memo_dir, n["folder"], args.folder)
         if existing:
             note_id = read_front(existing).get("id") or existing.name.split("_", 1)[0]
-            path = existing
+            path = dest_dir / existing.name
         else:
             day = to_jst(n["created"]).strftime("%Y%m%d")
             day_max[day] += 1
             note_id = day if day_max[day] == 1 else f"{day}-{day_max[day]}"
-            path = memo_dir / f"{note_id}_{safe_name(n['title'])}.md"
+            path = dest_dir / f"{note_id}_{safe_name(n['title'])}.md"
             by_note[n["id"]] = path
         text = render(n, note_id)
-        if existing and existing.read_text(encoding="utf-8") == text:
-            unchanged.append(path.name)
+        rel = path.relative_to(memo_dir).as_posix()
+        same = existing is not None and existing.read_text(encoding="utf-8") == text
+        if existing and existing != path:
+            moved.append(f"{existing.relative_to(memo_dir).as_posix()} → {rel}")
+            if not args.dry_run:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                existing.rename(path)
+        elif same:
+            unchanged.append(rel)
+        if same:
             continue
-        (updated if existing else added).append(path.name)
+        (updated if existing else added).append(rel)
         if not args.dry_run:
+            path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text, encoding="utf-8")
 
     label = "（dry-run: 書き込みなし）" if args.dry_run else ""
-    print(f"追加 {len(added)} 件 / 更新 {len(updated)} 件 / 変更なし {len(unchanged)} 件{label}")
+    print(f"追加 {len(added)} 件 / 更新 {len(updated)} 件 / 移動 {len(moved)} 件 / 変更なし {len(unchanged)} 件{label}")
     for name in added:
         print("  + " + name)
     for name in updated:
         print("  ~ " + name)
+    for name in moved:
+        print("  > " + name)
 
 
 if __name__ == "__main__":
