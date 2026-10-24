@@ -117,6 +117,19 @@ class MemoNotionTest(unittest.TestCase):
         self.assertEqual(res.returncode, 1)
         self.assertFalse(self.state_path.exists())
 
+    def test_to_notion_converts_br_and_escapes_tags(self):
+        text = "| a<br>b |\n<div>x</div>\na < b\n```\n<keep>\n```\n"
+        self.assertEqual(mn.to_notion(text), "| a<br />b |\n\\<div>x\\</div>\na < b\n```\n<keep>\n```\n")
+
+    def test_body_cli_for_notion(self):
+        write_memo(self.dir, "20260809_a.md", "20260809", body="| a<br>b |\n")
+        res = subprocess.run(
+            [sys.executable, "-I", str(HERE / "memo_notion.py"), "--memo-dir", str(self.dir),
+             "--state", str(self.state_path), "body", "--for-notion", "20260809"],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(res.stdout, "| a<br />b |\n")
+
     def test_state_roundtrip(self):
         state = {"20260809": {"page_id": "p", "modified": "m", "sha256": "h", "synced_at": "日本語"}}
         mn.save_state(self.state_path, state)

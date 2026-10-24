@@ -2,7 +2,7 @@
 
 usage:
   python3 -I memo_notion.py [--memo-dir 10_memo] [--state notion_sync.json] plan [--limit N] [--json]
-  python3 -I memo_notion.py body <メモID>
+  python3 -I memo_notion.py body [--for-notion] <メモID>
   python3 -I memo_notion.py record <メモID> <NotionページID>
 
 - 対応表（notion_sync.json）はメモ ID → {page_id, modified, sha256, synced_at}。
@@ -13,6 +13,7 @@ usage:
 import argparse
 import hashlib
 import json
+import re
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -97,6 +98,18 @@ def body(memo):
     return text.lstrip("\n")
 
 
+def to_notion(text):
+    """Notion の Markdown に合わせる。表の中の <br> は <br /> に、ほかのタグらしい文字は文字として残るよう \\< にする（コードブロックの中はそのまま）。"""
+    out, in_code = [], False
+    for line in text.split("\n"):
+        if line.lstrip().startswith("```"):
+            in_code = not in_code
+        elif not in_code:
+            line = re.sub(r"<(?!br />)(?=[A-Za-z/])", r"\\<", line.replace("<br>", "<br />"))
+        out.append(line)
+    return "\n".join(out)
+
+
 def record(state, memo, page_id, now):
     new = dict(state)
     new[memo.id] = {"page_id": page_id, "modified": memo.modified, "sha256": memo.sha256, "synced_at": now}
@@ -112,6 +125,7 @@ def main():
     p_plan.add_argument("--limit", type=int)
     p_plan.add_argument("--json", action="store_true")
     p_body = sub.add_parser("body", help="frontmatter を除いた本文を出す")
+    p_body.add_argument("--for-notion", action="store_true", help="Notion の Markdown に合わせて出す")
     p_body.add_argument("id")
     p_rec = sub.add_parser("record", help="送ったメモを対応表に記録する")
     p_rec.add_argument("id")
@@ -141,7 +155,8 @@ def main():
     elif args.cmd == "body":
         if args.id not in memos:
             sys.exit(f"メモ ID が見つかりません: {args.id}")
-        sys.stdout.write(body(memos[args.id]))
+        text = body(memos[args.id])
+        sys.stdout.write(to_notion(text) if args.for_notion else text)
     elif args.cmd == "record":
         if args.id not in memos:
             sys.exit(f"メモ ID が見つかりません: {args.id}（対応表は変えていません）")
