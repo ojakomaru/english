@@ -31,6 +31,15 @@ argument-hint: "[--limit N]"
    - 本文が長すぎて書けないときは、前半でページを作り、残りを `insert_content`（position は end）で足す。
 4. `git diff -- notion_sync.json` を見せてからコミットする。メッセージは `chore: Notion に送ったメモを記録（追加 N 件・更新 M 件）`。push はしない。
 
+## たくさん送るとき（初回の一括移行など）
+
+本文を Claude が書き写すと重いので、Notion のインポートを使う（D002 の 20_設計 1.4）。
+
+1. `python3 -I .claude/skills/memo-notion/memo_notion.py export ".superpowers/sdd/60_実装計画/notion-import/Video learning import"` で書き出し、フォルダごと ZIP にする（件数・大きさを見せる）。
+2. マメさんに、Notion の「設定 → インポート → Text & Markdown」で、取り込み先を DB「Video learning」にして取り込んでもらう。
+3. DB の「メモID」が空の行を探す（タイトル＝メモ ID になっている）。1件ずつ `update_properties` で欄（タイトルを本来のものに）を付け、`record` する。
+4. `git diff -- notion_sync.json` を見せてコミットする。
+
 ## 決まりごと
 
 - Notion のページは削除しない。メモアプリで消したメモのページも残す。

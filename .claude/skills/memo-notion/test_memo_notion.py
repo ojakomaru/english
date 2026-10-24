@@ -130,6 +130,23 @@ class MemoNotionTest(unittest.TestCase):
         )
         self.assertEqual(res.stdout, "| a<br />b |\n")
 
+    def test_to_import_escapes_line_start_marks(self):
+        text = "**閉じていない\nふつう **太字** です\n**閉じた太字**\n->矢印\n- 箇条書き\n"
+        self.assertEqual(
+            mn.to_import(text),
+            "\\*\\*閉じていない\nふつう **太字** です\n**閉じた太字**\n\\->矢印\n- 箇条書き\n",
+        )
+
+    def test_export_writes_only_adds(self):
+        write_memo(self.dir, "20260801_a.md", "20260801", created="2026-08-01T10:00+09:00")
+        write_memo(self.dir, "20260802_b.md", "20260802", created="2026-08-02T10:00+09:00", body="**閉じていない\n")
+        memos = self.memos()
+        state = mn.record({}, memos["20260801"], "page-1", "2026-10-24T09:00+09:00")
+        out = Path(self.tmp.name) / "out"
+        written = mn.export(memos, state, out)
+        self.assertEqual([p.name for p in written], ["20260802.md"])
+        self.assertEqual((out / "20260802.md").read_text(encoding="utf-8"), "\\*\\*閉じていない\n")
+
     def test_state_roundtrip(self):
         state = {"20260809": {"page_id": "p", "modified": "m", "sha256": "h", "synced_at": "日本語"}}
         mn.save_state(self.state_path, state)

@@ -3,6 +3,7 @@
 usage:
   python3 -I memo_notion.py [--memo-dir 10_memo] [--state notion_sync.json] plan [--limit N] [--json]
   python3 -I memo_notion.py body [--for-notion] <メモID>
+  python3 -I memo_notion.py export <書き出し先> [--limit N]   （初回の一括移行用。Notion のインポートで取り込む）
   python3 -I memo_notion.py record <メモID> <NotionページID>
 
 - 対応表（notion_sync.json）はメモ ID → {page_id, modified, sha256, synced_at}。
@@ -110,6 +111,33 @@ def to_notion(text):
     return "\n".join(out)
 
 
+def to_import(text):
+    """Notion のインポート（Text & Markdown）向け。行の頭の閉じていない ** と -> が箇条書きに変わるので、記号のまま残す。"""
+    out = []
+    for line in text.split("\n"):
+        if line.startswith("**") and line.count("**") % 2 == 1:
+            line = "\\*\\*" + line[2:]
+        elif line.startswith("->"):
+            line = "\\" + line
+        out.append(line)
+    return "\n".join(out)
+
+
+def export(memos, state, out_dir, limit=None):
+    """まだ送っていないメモ（追加）だけを <メモID>.md に書き出し、書いたファイルを返す。"""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = []
+    for kind, memo in plan(memos, state):
+        if kind != "add":
+            continue
+        if limit and len(written) >= limit:
+            break
+        p = out_dir / f"{memo.id}.md"
+        p.write_text(to_import(body(memo)), encoding="utf-8")
+        written.append(p)
+    return written
+
+
 def record(state, memo, page_id, now):
     new = dict(state)
     new[memo.id] = {"page_id": page_id, "modified": memo.modified, "sha256": memo.sha256, "synced_at": now}
@@ -127,6 +155,9 @@ def main():
     p_body = sub.add_parser("body", help="frontmatter を除いた本文を出す")
     p_body.add_argument("--for-notion", action="store_true", help="Notion の Markdown に合わせて出す")
     p_body.add_argument("id")
+    p_exp = sub.add_parser("export", help="まだ送っていないメモを Notion のインポート用に書き出す")
+    p_exp.add_argument("out_dir")
+    p_exp.add_argument("--limit", type=int)
     p_rec = sub.add_parser("record", help="送ったメモを対応表に記録する")
     p_rec.add_argument("id")
     p_rec.add_argument("page_id")
@@ -157,6 +188,11 @@ def main():
             sys.exit(f"メモ ID が見つかりません: {args.id}")
         text = body(memos[args.id])
         sys.stdout.write(to_notion(text) if args.for_notion else text)
+    elif args.cmd == "export":
+        written = export(memos, state, Path(args.out_dir), args.limit)
+        size = sum(p.stat().st_size for p in written)
+        biggest = max((p.stat().st_size for p in written), default=0)
+        print(f"書き出しました: {len(written)} 件 / 合計 {size} バイト / 最大 {biggest} バイト → {args.out_dir}")
     elif args.cmd == "record":
         if args.id not in memos:
             sys.exit(f"メモ ID が見つかりません: {args.id}（対応表は変えていません）")
