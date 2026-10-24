@@ -21,7 +21,7 @@
 | N001 | `progress.md` に英語学習の目標を書く。サジェストは目標を根拠にするため、先に要る | マメさん（Claude と相談） | 未着手 | ― | CLAUDE.md「サジェスト」 |
 | N002 | 学習記録を始める（`20_log/2026/YYYYMMDD_英語学習.md`） | マメさん → Claude | 未着手 | ― | CLAUDE.md「記録」 |
 | N003 | メモアプリを更新したら、差分を取り込む（`/memo-import`） | Claude | 随時 | メモアプリの更新 | `.claude/skills/memo-import/SKILL.md` |
-| N004 | D002_メモのNotion連携 の実装計画（`60_実装計画.md`）をレビューし、進め方を決める（要件・設計は 2026-10-24 に OK 済み）。上位の課題：D002 の I004（Wordbook と同じ階層に DB を作れるか）、I001（単語の候補探しは保留） | マメさん → Claude | 判断待ち | ― | `80_develop/D002_メモのNotion連携/` |
+| N004 | D002_メモのNotion連携 の実装（Task 1〜3 済み、Task 4 で3件を送って確認済み）。初回の残り145件の移し方を決める（今の接続だと全体 約4.3MB を Claude が書き写すことになり重い）。上位の課題：D002 の I004（Wordbook と同じ階層に DB を作れるか）、I001（単語の候補探しは保留） | マメさん → Claude | 判断待ち | ― | `80_develop/D002_メモのNotion連携/` |
 
 ## 3. セッション
 - 1セッション1行。状態：作業中 / 区切り（続きあり）/ 判断待ち / 終了 / 不明（会話の中身を確かめていない）
@@ -30,7 +30,7 @@
 
 | セッション | 担当していること | 状態 | 触っているファイル | 最終活動 |
 |---|---|---|---|---|
-| 「Notion 移行の運用相談」<br>（ID 未確認） | 動画メモを Notion に写す運用の相談。D002_メモのNotion連携 の要件・設計を作成 | 判断待ち | `80_develop/D002_メモのNotion連携/`、`80_develop/開発案一覧.md`、`STATUS.md` | 2026-10-24 09:10 |
+| 「Notion 移行の運用相談」<br>（ID 未確認） | D002_メモのNotion連携 の要件・設計・実装。/memo-notion を作り、3件を Notion に送った | 判断待ち | `80_develop/D002_メモのNotion連携/`、`.claude/skills/memo-notion/`、`notion_sync.json`、`STATUS.md` | 2026-10-24 11:00 |
 | 「Git ブランチ運用方針」<br>`local_f2807245-ecc6-48f9-8ac7-b407f0c89161`（直下で開いた） | ブランチ運用を main 基準に戻した（develop を main に取り込み、worktree の置き場を Git の対象外にした） | 終了 | `.gitignore`、`STATUS.md` | 2026-10-24 06:55 |
 | 「プロジェクト進捗ドキュメント」<br>`local_2cf6e40f-fda6-4738-8b18-837f86256fa1`（直下で開いた） | STATUS.md と 80_develop の導入 | 作業中 | `STATUS.md`、`CLAUDE.md`、`80_develop/` | 2026-10-24 06:05 |
 | 「リモートコントロールチェック」<br>`local_d621fe8c-e473-4c73-99c5-4a0a9dea3fe4` | Remote Control の動作確認（推測） | 不明 | ― | 2026-10-23 07:43 |
