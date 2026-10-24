@@ -3,7 +3,7 @@
 ## 記録
 - 学習記録は 20_log/YYYY/YYYYMMDD_英語学習.md に書く。同じ日の記録は同じファイルに追記する。
 - 既存の記録は消さない。
-- 新しく覚えた単語・表現は vocab.md の表に追加する。
+- 新しく覚えた単語・表現は Notion の Wordbook（単語は Words、表現は Chunks）に書く。
 
 ## メモ（10_memo/）
 - 10_memo/ は Apple メモ「Video learning」の写し。/memo-import で取り込む。

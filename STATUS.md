@@ -9,7 +9,7 @@
 
 ## 1. いまの状況
 - Apple メモ「Video learning」の写し（`10_memo/`）は、2026-10-23 の取り込みまで反映済み。
-- 学習記録（`20_log/`）・単語（`vocab.md`）・目標（`progress.md`）は、まだ中身がない。
+- 学習記録（`20_log/`）・目標（`progress.md`）は、まだ中身がない。単語・表現は Notion の Wordbook にある。
 - 開発案 D002_メモのNotion連携 は「開発中」。`/memo-notion` ができ、`10_memo/` の148件すべてを Notion の DB「Video learning」に移した（2026-10-24）。今後はメモを取り込んだら `/memo-notion` で差分を送る。
 
 ## 2. ネクストアクション
@@ -21,7 +21,7 @@
 | N001 | `progress.md` に英語学習の目標を書く。サジェストは目標を根拠にするため、先に要る | マメさん（Claude と相談） | 未着手 | ― | CLAUDE.md「サジェスト」 |
 | N002 | 学習記録を始める（`20_log/2026/YYYYMMDD_英語学習.md`） | マメさん → Claude | 未着手 | ― | CLAUDE.md「記録」 |
 | N003 | メモアプリを更新したら、差分を取り込む（`/memo-import`） | Claude | 随時 | メモアプリの更新 | `.claude/skills/memo-import/SKILL.md` |
-| N004 | D002_メモのNotion連携 の残り：V003（メモを1件直して更新を確かめる。マメさんがメモアプリで直す）、Task 6（`vocab.md` をやめ CLAUDE.md を書き換える。D002 の I005）。148件の移行は済み。上位の課題：D002 の I004（Wordbook と同じ階層に DB を作れるか）、I001（単語の候補探しは保留） | マメさん → Claude | 判断待ち | ― | `80_develop/D002_メモのNotion連携/` |
+| N004 | D002_メモのNotion連携 の残り：V003（メモを1件直して更新を確かめる。マメさんがメモアプリで直す）。148件の移行と `vocab.md` の廃止は済み。上位の課題：D002 の I001（単語の候補探しは保留） | マメさん → Claude | 判断待ち | ― | `80_develop/D002_メモのNotion連携/` |
 
 ## 3. セッション
 - 1セッション1行。状態：作業中 / 区切り（続きあり）/ 判断待ち / 終了 / 不明（会話の中身を確かめていない）
@@ -47,6 +47,7 @@
 
 | 日付 | 内容 | コミット |
 |---|---|---|
+| 2026-10-24 | D002：`/memo-notion` を作り、`10_memo/` の148件を Notion の DB「Video learning」に移した。`vocab.md` をやめ、単語・表現の正本を Notion の Wordbook にした | 2b93f53 ほか、この変更のコミット |
 | 2026-10-24 | develop を main に取り込み、main を基準に戻した。`.gitignore` に worktree の置き場（`.claude/worktrees/`）を追加 | この変更のコミット |
 | 2026-10-24 | STATUS.md と 80_develop を導入 | この変更のコミット |
 | 2026-10-23 | 用途フォルダの中のフォルダに番号を付け、パスを更新 | a486f36 |
