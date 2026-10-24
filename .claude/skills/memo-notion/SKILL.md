@@ -37,8 +37,9 @@ argument-hint: "[--limit N]"
 
 1. `python3 -I .claude/skills/memo-notion/memo_notion.py export ".superpowers/sdd/60_実装計画/notion-import/Video learning import"` で書き出し、フォルダごと ZIP にする（件数・大きさを見せる）。
 2. マメさんに、Notion の「設定 → インポート → Text & Markdown」で、取り込み先を DB「Video learning」にして取り込んでもらう。
-3. DB の「メモID」が空の行を探す（タイトル＝メモ ID になっている）。1件ずつ `update_properties` で欄（タイトルを本来のものに）を付け、`record` する。
-4. `git diff -- notion_sync.json` を見せてコミットする。
+3. DB の「メモID」が空の行を探す（タイトル＝メモ ID。「.md」が付いていることもある）。取り込みが終わって数分おいてから、1件ずつ `update_properties` で欄（タイトルを本来のものに）を付ける（すぐに付けると、Notion があとからタイトルをメモ ID に戻すことがある。D002 の I010）。
+4. DB の全行を読み出してメモと比べ、「タイトル＝メモID」の行や日付の違いがないことを確かめてから `record` する。
+5. `git diff -- notion_sync.json` を見せてコミットする。
 
 ## 決まりごと
 
