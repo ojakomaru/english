@@ -137,6 +137,12 @@ class MemoNotionTest(unittest.TestCase):
             "\\*\\*閉じていない\nふつう **太字** です\n**閉じた太字**\n\\->矢印\n- 箇条書き\n",
         )
 
+    def test_line_start_number_and_initial_are_kept(self):
+        text = "32. 歳の話\nM.\nM. Oh, yeah.\n2026.\n1.5 kg\nふつう 1. の文\n"
+        expected = "32\\. 歳の話\nM\\.\nM\\. Oh, yeah.\n2026\\.\n1.5 kg\nふつう 1. の文\n"
+        self.assertEqual(mn.to_import(text), expected)
+        self.assertEqual(mn.to_notion(text), expected)
+
     def test_export_writes_only_adds(self):
         write_memo(self.dir, "20260801_a.md", "20260801", created="2026-08-01T10:00+09:00")
         write_memo(self.dir, "20260802_b.md", "20260802", created="2026-08-02T10:00+09:00", body="**閉じていない\n")

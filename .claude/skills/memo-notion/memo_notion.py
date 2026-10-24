@@ -99,6 +99,14 @@ def body(memo):
     return text.lstrip("\n")
 
 
+LIST_MARK = re.compile(r"^([0-9]+|[A-Za-z])\.(?=\s|$)")
+
+
+def keep_list_mark(line):
+    """行の頭の「32. 」「M.」が番号付きの箇条書きにならないよう、点を \\. にする（番号の振り直しや消失を防ぐ）。"""
+    return LIST_MARK.sub(r"\1\\.", line)
+
+
 def to_notion(text):
     """Notion の Markdown に合わせる。表の中の <br> は <br /> に、ほかのタグらしい文字は文字として残るよう \\< にする（コードブロックの中はそのまま）。"""
     out, in_code = [], False
@@ -107,6 +115,7 @@ def to_notion(text):
             in_code = not in_code
         elif not in_code:
             line = re.sub(r"<(?!br />)(?=[A-Za-z/])", r"\\<", line.replace("<br>", "<br />"))
+            line = keep_list_mark(line)
         out.append(line)
     return "\n".join(out)
 
@@ -119,7 +128,7 @@ def to_import(text):
             line = "\\*\\*" + line[2:]
         elif line.startswith("->"):
             line = "\\" + line
-        out.append(line)
+        out.append(keep_list_mark(line))
     return "\n".join(out)
 
 
