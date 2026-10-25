@@ -143,6 +143,26 @@ class MemoNotionTest(unittest.TestCase):
         self.assertEqual(mn.to_import(text), expected)
         self.assertEqual(mn.to_notion(text), expected)
 
+    def test_line_start_quote_is_kept(self):
+        text = ">> Oh, yes.\n> 引用\n  >> 字下げ\n文の途中 >> はそのまま\n"
+        expected = "\\>> Oh, yes.\n\\> 引用\n  \\>> 字下げ\n文の途中 >> はそのまま\n"
+        self.assertEqual(mn.to_import(text), expected)
+        self.assertEqual(mn.to_notion(text), expected)
+
+    def test_quote_and_number_together(self):
+        self.assertEqual(mn.to_import(">> 20. Oh, 13.\n"), "\\>> 20. Oh, 13.\n")
+
+    def test_export_ids_rewrites_sent_memos(self):
+        write_memo(self.dir, "20260801_a.md", "20260801", created="2026-08-01T10:00+09:00", body=">> a\n")
+        write_memo(self.dir, "20260802_b.md", "20260802", created="2026-08-02T10:00+09:00")
+        memos = self.memos()
+        state = mn.record({}, memos["20260801"], "page-1", "2026-10-24T09:00+09:00")
+        state = mn.record(state, memos["20260802"], "page-2", "2026-10-24T09:00+09:00")
+        out = Path(self.tmp.name) / "out"
+        written = mn.export(memos, state, out, ids=["20260801"])
+        self.assertEqual([p.name for p in written], ["20260801.md"])
+        self.assertEqual((out / "20260801.md").read_text(encoding="utf-8"), "\\>> a\n")
+
     def test_export_writes_only_adds(self):
         write_memo(self.dir, "20260801_a.md", "20260801", created="2026-08-01T10:00+09:00")
         write_memo(self.dir, "20260802_b.md", "20260802", created="2026-08-02T10:00+09:00", body="**閉じていない\n")

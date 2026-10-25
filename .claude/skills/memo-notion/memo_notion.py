@@ -102,8 +102,15 @@ def body(memo):
 LIST_MARK = re.compile(r"^([0-9]+|[A-Za-z])\.(?=\s|$)")
 
 
+QUOTE_MARK = re.compile(r"^(\s*)>")
+
+
 def keep_list_mark(line):
-    """行の頭の「32. 」「M.」が番号付きの箇条書きにならないよう、点を \\. にする（番号の振り直しや消失を防ぐ）。"""
+    """行の頭の記号が書式にならないようにする。
+    「>>」（字幕の話者交代）は引用ブロックになって消えるので \\> に、
+    「32. 」「M.」は番号付きの箇条書きになって振り直し・消失するので点を \\. にする。"""
+    if QUOTE_MARK.match(line):
+        return QUOTE_MARK.sub(r"\1\\>", line, count=1)
     return LIST_MARK.sub(r"\1\\.", line)
 
 
@@ -132,11 +139,16 @@ def to_import(text):
     return "\n".join(out)
 
 
-def export(memos, state, out_dir, limit=None):
-    """まだ送っていないメモ（追加）だけを <メモID>.md に書き出し、書いたファイルを返す。"""
+def export(memos, state, out_dir, limit=None, ids=None):
+    """まだ送っていないメモ（追加）だけを <メモID>.md に書き出し、書いたファイルを返す。
+    ids を渡したときは、送ったかどうかに関係なくそのメモだけを書き出す（取り込み直し用）。"""
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
-    for kind, memo in plan(memos, state):
+    if ids is not None:
+        targets = [("add", memos[i]) for i in ids]
+    else:
+        targets = plan(memos, state)
+    for kind, memo in targets:
         if kind != "add":
             continue
         if limit and len(written) >= limit:
@@ -167,6 +179,7 @@ def main():
     p_exp = sub.add_parser("export", help="まだ送っていないメモを Notion のインポート用に書き出す")
     p_exp.add_argument("out_dir")
     p_exp.add_argument("--limit", type=int)
+    p_exp.add_argument("--ids", nargs="+", help="取り込み直すメモ ID（送ったものも書き出す）")
     p_rec = sub.add_parser("record", help="送ったメモを対応表に記録する")
     p_rec.add_argument("id")
     p_rec.add_argument("page_id")
@@ -198,7 +211,10 @@ def main():
         text = body(memos[args.id])
         sys.stdout.write(to_notion(text) if args.for_notion else text)
     elif args.cmd == "export":
-        written = export(memos, state, Path(args.out_dir), args.limit)
+        missing = [i for i in (args.ids or []) if i not in memos]
+        if missing:
+            sys.exit(f"メモ ID が見つかりません: {' '.join(missing)}")
+        written = export(memos, state, Path(args.out_dir), args.limit, args.ids)
         size = sum(p.stat().st_size for p in written)
         biggest = max((p.stat().st_size for p in written), default=0)
         print(f"書き出しました: {len(written)} 件 / 合計 {size} バイト / 最大 {biggest} バイト → {args.out_dir}")
