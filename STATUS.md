@@ -57,6 +57,7 @@
 | 2026-10-19 | CLAUDE.md の見出しから要件 ID の引用を削除 | 7c1da96 |
 | 2026-10-18 | `/memo-import` スキルを追加（Apple メモの差分取り込み） | 0191772 |
 | 2026-10-18 | Apple メモ「Video learning」の学習メモ146件を memo/ に取り込み | c7ecf63 |
+
 ## 6. AI への引き継ぎ
 - 最初に読むもの：CLAUDE.md、`progress.md`
 - 気をつけること：
