@@ -47,6 +47,7 @@
 
 | 日付 | 内容 | コミット |
 |---|---|---|
+| 2026-10-25 | D002：行の頭の番号・「>>」の崩れ（I011・I012）を直し、該当する13件を取り込み直した。DB は148行で重なりなし | この変更のコミット |
 | 2026-10-24 | D002：`/memo-notion` を作り、`10_memo/` の148件を Notion の DB「Video learning」に移した。`vocab.md` をやめ、単語・表現の正本を Notion の Wordbook にした | 2b93f53 ほか、この変更のコミット |
 | 2026-10-24 | develop を main に取り込み、main を基準に戻した。`.gitignore` に worktree の置き場（`.claude/worktrees/`）を追加 | この変更のコミット |
 | 2026-10-24 | STATUS.md と 80_develop を導入 | この変更のコミット |
