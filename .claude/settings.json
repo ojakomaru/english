@@ -1,5 +1,8 @@
 {
   "permissions": {
-    "allow": ["Edit(./**)"]
+    "allow": [
+      "Edit(./**)",
+      "Edit(~/Documents/ClaudeProjects/docs/20261105_マメさんのやり方.md)"
+    ]
   }
 }
