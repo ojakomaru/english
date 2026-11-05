@@ -33,12 +33,12 @@
 ## STATUS.md（マメさんが見るファイル）
 @STATUS.md
 
-- 書き方と上限（件数・文字数・行数）は ClaudeProjects/CLAUDE.md の「STATUS.md（全プロジェクト共通）」に従う。
+- 書き方と上限（件数・文字数・行数）は MameProjects/CLAUDE.md の「STATUS.md（全プロジェクト共通）」に従う。
 - 詳しいことは課題一覧などの正本に書き、STATUS には結論だけを書く。
 
 ## アプリ開発（80_develop/）
 - このフォルダを良くするためのアプリの開発案は `80_develop/D000_名前/` に置く。一覧は `80_develop/開発案一覧.md`。
-- 開発の作業を始める前に、その開発案の 00_概要 → 10_要件 → 20_外部設計 → 25_内部設計 → 30_課題一覧 を読む。決まったことは 50_決定記録 にある。設計の書き分けと上限は ClaudeProjects/CLAUDE.md の「設計書」に従う。
+- 開発の作業を始める前に、その開発案の 00_概要 → 10_要件 → 20_外部設計 → 25_内部設計 → 30_課題一覧 を読む。決まったことは 50_決定記録 にある。設計の書き分けと上限は MameProjects/CLAUDE.md の「設計書」に従う。
 - 要件・設計を変えたら、その文書の変更履歴に書き、ほかの文書への影響を整理する。決めたことは 50_決定記録 に書く。
 - 課題の正本は各開発案の 30_課題一覧。STATUS.md には上位だけを、ID を付けずに言葉で載せる。
-- 新しい開発案は ClaudeProjects 直下の `docs/90_templates/develop/` の雛形から作る。ID（D000）は english・kakeibo・lessons・secretary の `80_develop/` を通した最大値＋1。
+- 新しい開発案は MameProjects 直下の `docs/90_templates/develop/` の雛形から作る。ID（D000）は english・kakeibo・lessons・secretary の `80_develop/` を通した最大値＋1。
